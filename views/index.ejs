@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Okay, today</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="wrapformain">
+            <div class="main">
+                <div class="topbar">
+                    <div class="img1">
+                        <img src="/assets/img/next_left.png" alt="next_left">
+                    </div>
+                    <div class="title">
+                        <h3 id="listname">New List</h3>
+                    </div>
+                    <div class="img2">
+                        <img src="/assets/img/next_right.png" alt="next_right">
+                    </div>
+                </div>
+
+                <div class="middlebar">
+                    <form action="/newtodo" method="POST">
+                            <input id="in" type="text" placeholder="Add new task" name="item" required>
+                            <button id="submit" type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="bottombar">
+                
+                <ul id="curlist">
+                    <% for(var i = 0; i < todoLs.length; i++){ %>
+                        <% if (todoLs[i].Completed) {%>
+                    <li id="<%=todoLs[i].ID%>" class="doneli">
+                        <% } else {%>
+                            <li id="<%=todoLs[i].ID%>">
+                            <% }%>
+                        <%= todoLs[i].ToDo %>
+                        <div class="conin">
+                            <% if(todoLs[i].Completed) {%>
+                                <img id="check" src="/assets/img/check.png">
+                                <% } else{ %>
+                                <img id="uncheck"src="/assets/img/uncheck.png">
+                                <% } %>
+                            <img id="del" src="/assets/img/delete.png">
+                        </div>
+                    </li>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/assets/js/script.js"></script>
+
+</html>
