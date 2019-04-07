@@ -57,3 +57,22 @@ document.addEventListener('click', (event) => {
         request.send();
     }
 });
+
+document.addEventListener('click', (event) => {
+    if(event.target.id == 'clear'){
+        /* var el = event.target; */
+        if ($('ul').is(':empty')){
+            return;
+          }
+        console.log("ok");
+        $('ul').empty();
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+            }
+        }
+
+        request.open("GET", '/clear');
+        request.send();
+    }
+});

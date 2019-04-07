@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Okay, today</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
                         <img src="/assets/img/next_left.png" alt="next_left">
                     </div>
                     <div class="title">
-                        <h3 id="listname">New List</h3>
+                        <h3 id="listname">What ToDo</h3>
                     </div>
                     <div class="img2">
                         <img src="/assets/img/next_right.png" alt="next_right">
@@ -24,7 +25,7 @@
 
                 <div class="middlebar">
                     <form action="/newtodo" method="POST">
-                            <input id="in" type="text" placeholder="Add new task" name="item" required>
+                            <input maxlength="35" id="in" type="text" placeholder="Add new task" name="item" required>
                             <button id="submit" type="submit">Add</button>
                     </form>
                 </div>
@@ -51,6 +52,8 @@
                     </li>
                 <% } %>
             </div>
+            <div id="clear">Clear</div>
+            
         </div>
     </div>
 </body>

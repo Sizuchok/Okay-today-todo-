@@ -52,6 +52,14 @@ app.get('/isdone', (req, res) => {
     });
 });
 
+app.get('/clear', (req, res) => {
+    let sql = 'truncate table todolist1';
+    connection.query(sql, (err, result) => {
+        if(err) throw err;
+        res.send();
+    });
+});
+
 const port = process.env.port || 3000;
 
 app.listen(port, () => {
