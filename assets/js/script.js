@@ -76,3 +76,18 @@ document.addEventListener('click', (event) => {
         request.send();
     }
 });
+
+document.addEventListener('click', (event) =>{
+    if(event.target.className == 'listname'){
+        var target = event.target;
+        var newInput = document.createElement('input');
+        var newForm = document.createElement('form');
+        newForm.appendChild(newInput);
+        newInput.setAttribute('required', '');
+        newForm.setAttribute('class', 'reninput');
+        newForm.setAttribute('action', '/newlistname');
+        newForm.setAttribute('method', 'POST');
+        newInput.setAttribute('name', 'item');
+        target.parentNode.replaceChild(newForm, target);
+    }
+});

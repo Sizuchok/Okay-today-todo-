@@ -9,7 +9,6 @@ body{
 .wrap{
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     height: 100%;
 }
@@ -37,11 +36,10 @@ img{
 }
 
 
-.listname{
+#listname{
     text-decoration: underline;
     font-size: 25px;
     margin: 0;
-    cursor: pointer;
 }
 
 .title{
@@ -153,7 +151,6 @@ button:hover{
     text-align: center;
     margin: 10px;
     font-size: 20px;
-    cursor: pointer;
 }
 
 .reninput{
@@ -164,8 +161,17 @@ button:hover{
     width: 300px;
 }
 
-.home{
-    margin: 0;
-    padding: 0;
-    margin-top: 20px;
+.bmove{
+    float: left;
+    margin-right: 10px;
+}
+
+.buttn{
+    height: 25px;
+    width: 50px;
+    top: 0;
+}
+
+.buttn:hover{
+    background-color: #84D17B;
 }

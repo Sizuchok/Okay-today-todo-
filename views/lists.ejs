@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Okay, today</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/lstyle.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="wrapformain">
+            <div class="main">
+                <div class="topbar">
+                    <div class="img1">
+                        <img src="/assets/img/next_left.png" alt="next_left">
+                    </div>
+                    <div class="title">
+                        <h3 id="listname" class=''>Lists</h3>
+                    </div>
+                    <div class="img2">
+                        <img src="/assets/img/next_right.png" alt="next_right">
+                    </div>
+                </div>
+
+                <div class="middlebar">
+                    <form action="/newlist" method="POST">
+                            <input maxlength="35" id="in" type="text" placeholder="Add new list" name="item" required>
+                            <button id="submit" type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="bottombar">
+                
+                <ul id="curlist">
+                    <% for(var i = 0; i < lists.length; i++){ %>
+                        <form action="/gotolist?id=<%=lists[i].listid%>&name=<%= lists[i].listname %>" method="POST">
+                        <li id="<%=lists[i].listid%>" class="li">
+                        <%= lists[i].listname %>
+                        <div class="conin">
+                            <div class="bmove"><button class="buttn" type="submit">Go</button></div>
+                            <img id="del" src="/assets/img/delete.png">
+                        </div>
+                    </li>
+                </form>
+                <% } %>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="/assets/js/lscript.js"></script>
+</html>
