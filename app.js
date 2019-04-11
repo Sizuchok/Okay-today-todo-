@@ -49,12 +49,22 @@ app.post('/newlist', (req, res) => {
 });
 
 app.get('/deletelist', (req, res) => {
-    let sql = `delete lists, todolist1 from lists join todolist1 where
-                lists.listid = ${req.query.id} or todolist1.listid = ${req.query.id}`;
+    // let sql = `delete lists.*, todolist1.* from lists join todolist1 where
+    //            lists.listid = ${req.query.id} or todolist1.listid = ${req.query.id}`;
+    let sql = `delete from todolist1 where listid = ${req.query.id}`;
+    console.log(req.query.id);
     connection.query(sql, (err, result) => {
         if(err) throw err;
-        res.send();
+        console.log("Done!");
     });
+
+    sql = `delete from lists where listid = ${req.query.id}`;
+    connection.query(sql, (err, result) => {
+        if(err) throw err;
+        console.log("Done!");
+    });
+
+    res.send();
 });
 
 
