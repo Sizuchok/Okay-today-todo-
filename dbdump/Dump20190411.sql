@@ -18,6 +18,30 @@ USE `todolist`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `lists`
+--
+
+DROP TABLE IF EXISTS `lists`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `lists` (
+  `listid` int(11) NOT NULL AUTO_INCREMENT,
+  `listname` varchar(50) DEFAULT 'What ToDo',
+  PRIMARY KEY (`listid`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lists`
+--
+
+LOCK TABLES `lists` WRITE;
+/*!40000 ALTER TABLE `lists` DISABLE KEYS */;
+INSERT INTO `lists` VALUES (16,'friday'),(17,'tuesday'),(19,'8 - th day of the week');
+/*!40000 ALTER TABLE `lists` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `todolist1`
 --
 
@@ -28,8 +52,9 @@ CREATE TABLE `todolist1` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ToDo` tinytext,
   `Completed` tinyint(3) unsigned DEFAULT NULL,
+  `listid` int(11) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +63,7 @@ CREATE TABLE `todolist1` (
 
 LOCK TABLES `todolist1` WRITE;
 /*!40000 ALTER TABLE `todolist1` DISABLE KEYS */;
-INSERT INTO `todolist1` VALUES (1,'do some cool stuff',0),(2,'clear my head',1),(3,'end this task',0),(4,'bla bla bla',1);
+INSERT INTO `todolist1` VALUES (25,'idk',0,17),(26,'get down',0,17),(27,'do friday stuff',1,16);
 /*!40000 ALTER TABLE `todolist1` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-07 17:49:29
+-- Dump completed on 2019-04-11  3:22:32
